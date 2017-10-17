@@ -126,15 +126,6 @@
 					}
 				],
 				"body": {
-					"mode": "formdata",
-					"formdata": [
-						{
-							"key": "file",
-							"value": "",
-							"description": "",
-							"type": "file"
-						}
-					]
 				},
 				"description": ""
 			},
