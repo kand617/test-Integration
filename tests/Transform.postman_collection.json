@@ -60,7 +60,7 @@
 							"key": "file",
 							"description": "",
 							"type": "file",
-							"src": "aa.json"
+							"src": "amazon.wsdl"
 						}
 					]
 				},
