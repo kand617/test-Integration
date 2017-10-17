@@ -64,7 +64,7 @@
 							"key": "file",
 							"description": "",
 							"type": "file",
-							"src": "tests/amazon.wsdl"
+							"src": "tests/petstore.json"
 						}
 					]
 				},
