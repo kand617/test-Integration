@@ -59,7 +59,7 @@
 			"name": "transform copy",
 			"request": {
 				"url": {
-					"raw": "https://www.apimatic.io/api/transform?format=APIMATIC&descriptionUrl=https://github.com/raml-org/raml-examples/blob/master/helloworld/helloworld.raml",
+					"raw": "https://www.apimatic.io/api/transform?format=APIMATIC&descriptionUrl=http://www.webservicex.com/globalweather.asmx?WSDL",
 					"protocol": "https",
 					"host": [
 						"www",
@@ -79,7 +79,7 @@
 						},
 						{
 							"key": "descriptionUrl",
-							"value": "https://github.com/raml-org/raml-examples/blob/master/helloworld/helloworld.raml",
+							"value": "http://www.webservicex.com/globalweather.asmx?WSDL",
 							"equals": true,
 							"description": ""
 						}
@@ -95,15 +95,6 @@
 					}
 				],
 				"body": {
-					"mode": "formdata",
-					"formdata": [
-						{
-							"key": "file",
-							"value": "",
-							"description": "",
-							"type": "file"
-						}
-					]
 				},
 				"description": ""
 			},
