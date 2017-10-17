@@ -60,7 +60,7 @@
 							"key": "file",
 							"description": "",
 							"type": "file",
-							"src": "amazon.wsdl"
+							"src": "aa.json"
 						}
 					]
 				},
@@ -121,15 +121,6 @@
 					}
 				],
 				"body": {
-					"mode": "formdata",
-					"formdata": [
-						{
-							"key": "file",
-							"value": "",
-							"description": "",
-							"type": "file"
-						}
-					]
 				},
 				"description": ""
 			},
