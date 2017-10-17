@@ -9,6 +9,19 @@
 	"item": [
 		{
 			"name": "transform",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						]
+					}
+				}
+			],
 			"request": {
 				"url": {
 					"raw": "https://www.apimatic.io/api/transform?format=APIMATIC",
@@ -45,9 +58,9 @@
 					"formdata": [
 						{
 							"key": "file",
-							"value": "",
 							"description": "",
-							"type": "file"
+							"type": "file",
+							"src": "amazon.wsdl"
 						}
 					]
 				},
@@ -57,6 +70,19 @@
 		},
 		{
 			"name": "transform copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						]
+					}
+				}
+			],
 			"request": {
 				"url": {
 					"raw": "https://www.apimatic.io/api/transform?format=APIMATIC&descriptionUrl=http://www.webservicex.com/globalweather.asmx?WSDL",
@@ -95,6 +121,15 @@
 					}
 				],
 				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"value": "",
+							"description": "",
+							"type": "file"
+						}
+					]
 				},
 				"description": ""
 			},
