@@ -31,7 +31,7 @@
   },
   "Endpoints": [
     {
-      "Name": "Convert Uploaded File to Format",
+      "Name": "Convert Uploaded file to Format",
       "Description": "Upload a file and convert it to the given format. The API description format of the uploaded file will be detected automatically. The converted file is returned as the response.",
       "HTTPMethod": "POST",
       "Group": "API Transformer",
