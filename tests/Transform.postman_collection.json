@@ -60,7 +60,7 @@
 							"key": "file",
 							"description": "",
 							"type": "file",
-							"src": "amazon.wsdl"
+							"src": "tests/amazon.wsdl"
 						}
 					]
 				},
