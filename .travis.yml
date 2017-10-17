@@ -1,0 +1,10 @@
+env:
+  global:
+    - "decsriptionFile = transformer.json"
+  scripts:
+    - "curl -X POST \
+          'https://www.apimatic.io/api/transform?format=APIMATIC' \
+          -H 'authorization: Basic ZmFyaGFuLm11aGFtbWFkQGFwaW1hdGljLmlvOmZhcjg5ODkwOTg=' \
+          -H 'cache-control: no-cache' \
+          -H 'content-type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW' \
+          -F 'file=decsriptionFile'"
