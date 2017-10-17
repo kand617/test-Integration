@@ -54,6 +54,60 @@
 				"description": ""
 			},
 			"response": []
+		},
+		{
+			"name": "transform copy",
+			"request": {
+				"url": {
+					"raw": "https://www.apimatic.io/api/transform?format=APIMATIC&descriptionUrl=https://github.com/raml-org/raml-examples/blob/master/helloworld/helloworld.raml",
+					"protocol": "https",
+					"host": [
+						"www",
+						"apimatic",
+						"io"
+					],
+					"path": [
+						"api",
+						"transform"
+					],
+					"query": [
+						{
+							"key": "format",
+							"value": "APIMATIC",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "descriptionUrl",
+							"value": "https://github.com/raml-org/raml-examples/blob/master/helloworld/helloworld.raml",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic ZmFyaGFuLm11aGFtbWFkQGFwaW1hdGljLmlvOmZhcjg5ODkwOTg=",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"value": "",
+							"description": "",
+							"type": "file"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
 		}
 	]
 }
