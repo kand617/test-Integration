@@ -1,10 +1,14 @@
-env:
-  global:
-    - "decsriptionFile = transformer.json"
-  scripts:
-    - "curl -X POST \
-          'https://www.apimatic.io/api/transform?format=APIMATIC' \
-          -H 'authorization: Basic ZmFyaGFuLm11aGFtbWFkQGFwaW1hdGljLmlvOmZhcjg5ODkwOTg=' \
-          -H 'cache-control: no-cache' \
-          -H 'content-type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW' \
-          -F 'file=decsriptionFile'"
+language: node_js
+node_js:
+  - "8.2.1"
+
+install:
+  - npm install newman
+
+before_script:
+  - node --version
+  - npm --version
+  - node_modules/.bin/newman --version
+
+script:
+  - node_modules/.bin/newman run tests/Transform.postman_collection.json
