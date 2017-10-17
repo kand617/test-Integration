@@ -1,0 +1,59 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Transform",
+		"_postman_id": "47a308b3-cc90-c612-abbe-efa81af7dcd4",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "transform",
+			"request": {
+				"url": {
+					"raw": "https://www.apimatic.io/api/transform?format=APIMATIC",
+					"protocol": "https",
+					"host": [
+						"www",
+						"apimatic",
+						"io"
+					],
+					"path": [
+						"api",
+						"transform"
+					],
+					"query": [
+						{
+							"key": "format",
+							"value": "APIMATIC",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic ZmFyaGFuLm11aGFtbWFkQGFwaW1hdGljLmlvOmZhcjg5ODkwOTg=",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"value": "",
+							"description": "",
+							"type": "file"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
