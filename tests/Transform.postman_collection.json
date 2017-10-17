@@ -21,7 +21,8 @@
 							"",
 							"var data = JSON.parse(responseBody);",
 							"",
-							"tests['Response should have name field'] = responseBody.has(\"Name\");"
+							"tests['Response should have name field'] = responseBody.has(\"Name\");",
+							"console.log(data.Description);"
 						]
 					}
 				}
