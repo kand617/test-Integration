@@ -1,0 +1,260 @@
+{
+	"variables": [],
+	"info": {
+		"name": "APIMaticCI",
+		"_postman_id": "f20a9347-0afd-f0b9-8325-fb3adf90c3f6",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Fetch Api Group",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "https://apimatic-io-ux.azurewebsites.net/api/api-groups/{{groupId}}",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Complete Fetch Api Entity",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var data = JSON.parse(responseBody);",
+							"",
+							"var endpoints = data.endpoints;",
+							"pm.environment.set(\"apiId\", endpoints[0].apiId);",
+							"",
+							"console.log(endpoints[0].apiId);"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "https://apimatic-io-ux.azurewebsites.net/api/api-entities/{{entityId}}",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/vnd.apimatic.apiEntity.full.v1+json",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Add Api Group Docs",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 204\", function () {",
+							"    pm.response.to.have.status(204);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "https://apimatic-io-ux.azurewebsites.net/api/api-groups/{{groupId}}/docs",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"basicSettings\": {\n        \"templates\": [\n            \"CS_NET_STANDARD_LIB\",\n            \"CS_PORTABLE_NET_LIB\",\n            \"CS_UNIVERSAL_WINDOWS_PLATFORM_LIB\",\n            \"JAVA_GRADLE_ANDROID_LIB\",\n            \"OBJC_COCOA_TOUCH_IOS_LIB\",\n            \"JAVA_ECLIPSE_JRE_LIB\",\n            \"JAVA_ECLIPSE_JAX_RS\",\n            \"PHP_GENERIC_LIB\",\n            \"PYTHON_GENERIC_LIB\",\n            \"RUBY_GENERIC_LIB\"\n        ],\n        \"showHttpReference\": true,\n        \"allowExport\": true\n    },\n    \"landingPageSettings\":{\n    \t\"title\":\"the title\",\n    \t\"tagLine\":\"The tag line\",\n    \t\"content\":[\n    \t\t{\n    \t\t\t\"heading\":\"section heading 1\",\n    \t\t\t\"body\":\"body of the heading 1\"\n    \t\t}\n    \t]\n    },\n    \"appearanceSettings\":{\n    \t\n    },\n    \"companyInformation\":{\n    \t\"companyWebsiteUrl\":\"www.google.com\",\n    \t\"companyLogo\":{\n    \t\t\n    \t}\n    }\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Add Api Group Hosted Docs",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 204\", function () {",
+							"    pm.response.to.have.status(204);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "https://apimatic-io-ux.azurewebsites.net/api/api-groups/{{groupId}}/hosted-docs",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"hostingSettings\":{\n\t\t\"slug\":\"hhhhh\"\n\t}\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Add Api Docs for Api Entity",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 204\", function () {",
+							"    pm.response.to.have.status(204);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "https://apimatic-io-ux.azurewebsites.net/api/api-entities/{{entityId}}/docs",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"Guide\":{\n\t\t\"Content\":\"Some Content\"\n\t}\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Add Api Hosted Docs",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 204\", function () {",
+							"    pm.response.to.have.status(204);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "https://apimatic-io-ux.azurewebsites.net/api/api-entities/{{entityId}}/hosted-api-docs",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Fetch Api Hosted Docs",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"var data = JSON.parse(responseBody);",
+							"",
+							"console.log(data.apiDescription);"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "https://apimatic-io-ux.azurewebsites.net/api/api-entities/{{entityId}}/hosted-api-docs",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
