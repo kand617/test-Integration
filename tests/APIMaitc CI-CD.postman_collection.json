@@ -1,0 +1,177 @@
+{
+	"variables": [],
+	"info": {
+		"name": "APIMaticCI",
+		"_postman_id": "f20a9347-0afd-f0b9-8325-fb3adf90c3f6",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Resource Owner Password Credentials Grant",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"var data = JSON.parse(responseBody);",
+							"",
+							"",
+							"",
+							"pm.environment.set(\"access_token\", data.access_token);"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "{{baseUrl}}/token",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "grant_type={{grantType}}&userName={{userName}}&password={{password}}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Inplace Import With File",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 204\", function () {",
+							"    pm.response.to.have.status(204);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "{{baseUrl}}/api/api-entities/{{apiEntityId}}/file-import",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/vnd.apimatic.apiEntity.full.v1+json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token}}",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"description": "",
+							"type": "file",
+							"src": "tests/telstra-messaging-api-v2.2.2.json"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Update Api Hosted Docs",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 204\", function () {",
+							"    pm.response.to.have.status(204);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "{{baseUrl}}/api/api-entities/{{apiEntityId}}/hosted-api-docs",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token}}",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n   \n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Fetch Api Hosted Docs",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"var data = JSON.parse(responseBody);",
+							"",
+							"console.log(data.apiName);"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "{{baseUrl}}/api/api-entities/{{apiEntityId}}/hosted-api-docs",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token}}",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
