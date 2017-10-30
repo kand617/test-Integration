@@ -1548,7 +1548,7 @@
     "SynchronyMode": 0,
     "ModelSerializationScheme": "Json",
     "ArraySerialization": "Indexed",
-    "Nullify404": true,
+    "Nullify404": false,
     "UseHttpMethodPrefix": true,
     "UseModelPrefix": false,
     "UseExceptionPrefix": true,
