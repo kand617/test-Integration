@@ -43,10 +43,10 @@
   },
   "Endpoints": [
     {
-      "Name": "Get Telstra Messaging API SMS Status",
+      "Name": "Get SMS Status",
       "Description": "Get SMS Status",
       "HTTPMethod": "GET",
-      "Group": "Messaging",
+      "Group": "New Test",
       "RequiresAuthentication": true,
       "Route": "/messages/sms/{messageId}/status",
       "Response": {
