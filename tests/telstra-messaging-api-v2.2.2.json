@@ -43,7 +43,7 @@
   },
   "Endpoints": [
     {
-      "Name": "Get Telstra SMS Status",
+      "Name": "Get Telstra Messaging API SMS Status",
       "Description": "Get SMS Status",
       "HTTPMethod": "GET",
       "Group": "Messaging",
