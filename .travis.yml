@@ -11,4 +11,4 @@ before_script:
   - node_modules/.bin/newman --version
 
 script:
-  - node_modules/.bin/newman run tests/APIMaitc_CI-CD.postman_collection.json -e tests/CICD_Environment.postman_environment.json
+  - node_modules/.bin/newman run tests/APIMaitcCI-CD.postman_collection_v2.json -e tests/CICD_Environment.postman_environment_v2.json
