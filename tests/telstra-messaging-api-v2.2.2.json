@@ -46,7 +46,7 @@
       "Name": "Get SMS Status",
       "Description": "Get SMS Status",
       "HTTPMethod": "GET",
-      "Group": "New Test",
+      "Group": "Messaging",
       "RequiresAuthentication": true,
       "Route": "/messages/sms/{messageId}/status",
       "Response": {
