@@ -1,5 +1,5 @@
 {
-  "Name": "Telstra Messaging API Test5",
+  "Name": "Telstra Messaging API Test6",
   "BaseUri": "https://tapi.telstra.com/v2",
   "ServerConfiguration": {
     "DefaultEnvironment": "production",
@@ -22,7 +22,7 @@
     "Parameters": []
   },
   "ImageUri": "",
-  "Description": "\nThe Telstra (additional Text) SMS Messaging API allows your applications to send and receive SMS text messages from Australia's leading network operator.\n\nIt also allows your application to track the delivery status of both sent and received SMS messages.\n",
+  "Description": "\nThe Telstra (additional test) SMS Messaging API allows your applications to send and receive SMS text messages from Australia's leading network operator.\n\nIt also allows your application to track the delivery status of both sent and received SMS messages.\n",
   "Version": "2.2.2",
   "AdditionalHeaders": [],
   "Authentication": {
@@ -46,7 +46,7 @@
       "Name": "Get SMS Status",
       "Description": "Get SMS Status",
       "HTTPMethod": "GET",
-      "Group": "New Test",
+      "Group": "Messaging",
       "RequiresAuthentication": true,
       "Route": "/messages/sms/{messageId}/status",
       "Response": {
